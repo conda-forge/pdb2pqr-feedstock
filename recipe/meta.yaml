@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - pdb2pqr30=pdb2pqr.main:main
     - dx2cube=pdb2pqr.main:dx_to_cube
@@ -27,8 +27,9 @@ requirements:
     - mmcif_pdbx >=1.1.2
     - pandas >=1.0
     - propka >=3.2
-    - pytest >=5.4.1
     - python
+    - requests
+    - setuptools  # for pkg_resources
 
 test:
   imports:
@@ -42,9 +43,7 @@ test:
     - inputgen --help
   requires:
     - pytest
-    - requests
     - testfixtures
-    - setuptools
 
 about:
   home: http://www.poissonboltzmann.org
