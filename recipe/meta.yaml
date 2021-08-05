@@ -1,23 +1,23 @@
 {% set name = "pdb2pqr" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: a6f5e2eefbd8bd2a072a89ee4026977de02dadd56e921095afac88d596b63820
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 28a641e449f11dc364401174917d52a4c3cf381b1a8495966bb2a403faacc470
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - pdb2pqr30=pdb2pqr.main:main
     - dx2cube=pdb2pqr.main:dx_to_cube
     - psize=pdb2pqr.psize:main
     - inputgen=pdb2pqr.inputgen:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -50,7 +50,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: "Automates many of the common tasks of preparing structures for continuum solvation calculations as well as many other types of biomolecular structure modeling, analysis, and simulation."
+  summary: Automates many of the common tasks of preparing structures for continuum solvation calculations as well as many other types of biomolecular structure modeling, analysis, and simulation.
   doc_url: https://pdb2pqr.readthedocs.io/en/latest/
   dev_url: https://github.com/Electrostatics/pdb2pqr
 
