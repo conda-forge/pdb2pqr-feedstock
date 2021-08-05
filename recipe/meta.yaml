@@ -22,12 +22,12 @@ build:
 requirements:
   host:
     - pip
-    - python>=3.6
+    - python >=3.6
   run:
     - mmcif_pdbx >=1.1.2
     - pandas >=1.0
     - propka >=3.2
-    - python>=3.6
+    - python >=3.6
     - requests
     - setuptools  # for pkg_resources
 
