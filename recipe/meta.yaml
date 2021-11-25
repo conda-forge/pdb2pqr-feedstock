@@ -1,5 +1,5 @@
 {% set name = "pdb2pqr" %}
-{% set version = "3.3.2" %}
+{% set version = "3.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2689775af1946acd01e20309b13f99c1ad7618800c70fec080b0dcadb2ae799d
+  sha256: 75b92503b1fceba131ca4f7ea1deee1d06b6680d7aef6c399e4d33e48634e3f1
 
 build:
   noarch: python
