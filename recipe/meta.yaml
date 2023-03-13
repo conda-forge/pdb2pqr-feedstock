@@ -40,7 +40,6 @@ test:
   commands:
     - pdb2pqr30 --help
     - dx2cube --help
-    - psize --help
     - inputgen --help
   requires:
     - pytest
