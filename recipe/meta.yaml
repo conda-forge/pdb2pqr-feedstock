@@ -1,5 +1,5 @@
 {% set name = "pdb2pqr" %}
-{% set version = "3.4.1" %}
+{% set version = "3.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -22,12 +22,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
   run:
     - mmcif_pdbx >=1.1.2
     - pandas >=1.0
-    - propka >=3.2
-    - python >=3.6
+    - propka >=3.5
+    - python >=3.8
+    - numpy
     - requests
     - setuptools  # for pkg_resources
 
