@@ -1,18 +1,19 @@
 {% set name = "pdb2pqr" %}
-{% set version = "3.7.1" %}
+{% set version = "3.8.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 05b5c464022a3ad11c9597c6fc7f70c56061c4669b1497a51958da90d959152f
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e9f5a3029137353730050522c7c57d0cea0f712b1181ff7544bd96303d9aac36
 
 build:
   noarch: python
   number: 0
   entry_points:
+    - pdb2pqr=pdb2pqr.main:main
     - pdb2pqr30=pdb2pqr.main:main
     - dx2cube=pdb2pqr.main:dx_to_cube
     - psize=pdb2pqr.psize:main
@@ -21,6 +22,7 @@ build:
 
 requirements:
   host:
+    - hatchling
     - pip
     - python {{ python_min }}
   run:
@@ -30,7 +32,7 @@ requirements:
     - python >={{ python_min }}
     - numpy
     - requests
-    - setuptools  # for pkg_resources
+    - typing_extensions
 
 test:
   imports:
@@ -38,6 +40,7 @@ test:
     - pdb2pqr.hydrogens
     - pdb2pqr.ligand
   commands:
+    - pdb2pqr --help
     - pdb2pqr30 --help
     - dx2cube --help
     - inputgen --help
@@ -50,7 +53,7 @@ about:
   home: http://www.poissonboltzmann.org
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file: LICENSE.md
   summary: Automates many of the common tasks of preparing structures for continuum solvation calculations as well as many other types of biomolecular structure modeling, analysis, and simulation.
   doc_url: https://pdb2pqr.readthedocs.io/en/latest/
   dev_url: https://github.com/Electrostatics/pdb2pqr
