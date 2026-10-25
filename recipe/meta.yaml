@@ -1,13 +1,13 @@
 {% set name = "pdb2pqr" %}
-{% set version = "3.7.1" %}
+{% set version = "3.8.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 05b5c464022a3ad11c9597c6fc7f70c56061c4669b1497a51958da90d959152f
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e9f5a3029137353730050522c7c57d0cea0f712b1181ff7544bd96303d9aac36
 
 build:
   noarch: python
